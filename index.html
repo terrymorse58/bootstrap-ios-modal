@@ -5,82 +5,28 @@
   <meta charset="utf-8">
   <meta name="viewport"
         content="width=device-width, maximum-scale=1, minimum-scale=1, shrink-to-fit=no, user-scalable=no">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+
+  <title>Bootstrap Modal with iOS Styling</title>
+
+  <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
         crossorigin="anonymous">
+  <link rel="stylesheet" href="node_modules/bootsdark/dist/bootsdark.min.css">
   <link rel="stylesheet" href="ios-modal.css">
-  <title>Bootstrap Modal with iOS Styling</title>
-  <style>
-    .modal-dialog-ios {
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-align: center;
-      align-items: center;
-      min-height: calc(100% - 1rem);
-    }
-
-    .modal-dialog-ios::before {
-      display: block;
-      height: calc(100vh - 1rem);
-      content: "";
-    }
-
-    .modal-dialog-ios.modal-dialog-scrollable {
-      -ms-flex-direction: column;
-      flex-direction: column;
-      -ms-flex-pack: center;
-      justify-content: center;
-      height: 100%;
-    }
-
-    .modal-dialog-ios.modal-dialog-scrollable .modal-content {
-      max-height: none;
-    }
-
-    .modal-dialog-ios.modal-dialog-scrollable::before {
-      content: none;
-    }
-    .modal-dialog-ios .modal-content {
-      border-radius: 12px;
-      border: none;
-    }
-    .modal-dialog-ios .modal-body {
-      padding: 1rem 1.5rem;
-      text-align: center;
-      font-weight: 500;
-      font-size: 1.2rem;
-    }
-    .modal-dialog-ios .modal-footer {
-      justify-content: center;
-      padding: 0;
-      border-top: 1px solid #ccc;
-    }
-    .modal-dialog-ios .modal-footer .btn-group {
-      width: 100%;
-    }
-    .modal-dialog-ios .modal-footer .btn {
-      padding: 0.5rem 0.75rem;
-      border-style: none;
-      border-radius: 0;
-    }
-    .modal-dialog-ios .modal-footer .btn:first-child {
-      border-bottom-left-radius: 12px;
-    }
-    .modal-dialog-ios .modal-footer .btn:not(:first-child) {
-      border-left: 1px solid #ccc;
-    }
-    .modal-dialog-ios .modal-footer .btn:last-child {
-      border-bottom-right-radius: 12px;
-    }
-    .modal-dialog-ios .modal-footer .btn:hover {
-      background-color: #eee;
-    }
-
-  </style>
 </head>
-<body style="padding: 2rem;">
+<body>
 
-<div class="container">
+<header>
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand" href="https://terrymorse.com">Terry Morse
+      Software</a>
+  </nav>
+</header>
+
+
+<div class="container mt-4">
 
   <h1>Bootstrap Modal with iOS Styling</h1>
 
@@ -92,8 +38,7 @@
     Open default style modal
   </button>
   <!-- show iOS style -->
-  <button type="button" class="btn btn-primary"
-          style="margin-left: 2rem;"
+  <button type="button" class="btn btn-primary ml-3"
           onclick="iosStyle();">
     Open iOS style modal
   </button>
@@ -110,14 +55,17 @@
       <div class="modal-footer">
         <div class="btn-group" role="group">
           <button type="button"
-            class="btn btn-lg btn-outline-primary"
-            data-dismiss="modal">Left</button>
+                  class="btn btn-lg btn-outline-primary"
+                  data-dismiss="modal">Left
+          </button>
           <button type="button"
-            class="btn btn-lg btn-outline-danger"
-            data-dismiss="modal">Straight</button>
+                  class="btn btn-lg btn-outline-danger"
+                  data-dismiss="modal">Straight
+          </button>
           <button type="button"
-            class="btn btn-lg btn-outline-secondary"
-            data-dismiss="modal">Right</button>
+                  class="btn btn-lg btn-outline-secondary"
+                  data-dismiss="modal">Right
+          </button>
         </div>
       </div>
     </div>
@@ -135,26 +83,37 @@
       <div class="modal-footer">
         <div class="btn-group" role="group">
           <button type="button"
-            class="btn btn-lg btn-outline-secondary text-primary"
-            data-dismiss="modal">Left</button>
+                  class="btn btn-lg btn-outline-primary"
+                  data-dismiss="modal">Left
+          </button>
           <button type="button"
-            class="btn btn-lg btn-outline-secondary text-danger"
-            data-dismiss="modal">Straight</button>
+                  class="btn btn-lg btn-outline-danger"
+                  data-dismiss="modal">Straight
+          </button>
           <button type="button"
-            class="btn btn-lg btn-outline-secondary text-secondary"
-            data-dismiss="modal">Right</button>
+                  class="btn btn-lg btn-outline-secondary"
+                  data-dismiss="modal">Right
+          </button>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+  crossorigin="anonymous"></script>
+<script
+  src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+  integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+  crossorigin="anonymous"></script>
 <script>
 
-  function defaultStyle() {
+  function defaultStyle () {
     $('#defaultModal').modal('show');
   }
 

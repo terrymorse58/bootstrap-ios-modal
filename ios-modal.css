@@ -1,4 +1,8 @@
-/* Bootstrap modal styled to look like an iOS modal */
+/*!
+ * Bootstrap modal styled to look like an iOS modal
+ * Copyright 2020 Terry Morse
+ * Licensed under MIT
+ */
 .modal-dialog-ios {
   display: -ms-flexbox;
   display: flex;
@@ -41,10 +45,11 @@
 .modal-dialog-ios .modal-footer {
   justify-content: center;
   padding: 0;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 .modal-dialog-ios .modal-footer .btn-group {
   width: 100%;
+  margin: 0;
 }
 .modal-dialog-ios .modal-footer .btn {
   padding: 0.5rem 0.75rem;
@@ -55,11 +60,15 @@
   border-bottom-left-radius: 12px;
 }
 .modal-dialog-ios .modal-footer .btn:not(:first-child) {
-  border-left: 1px solid #ccc;
+  border-left: 1px solid rgba(0, 0, 0, 0.2);
 }
 .modal-dialog-ios .modal-footer .btn:last-child {
   border-bottom-right-radius: 12px;
 }
 .modal-dialog-ios .modal-footer .btn:hover {
-  background-color: #eee;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+/* iOS modal's backdrop is more transparent */
+.modal-backdrop.show {
+  opacity: 0.1;
 }

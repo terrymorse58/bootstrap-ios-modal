@@ -68,7 +68,35 @@
 .modal-dialog-ios .modal-footer .btn:hover {
   background-color: rgba(0, 0, 0, 0.15);
 }
-/* iOS modal's backdrop is more transparent */
+/* iOS modal backdrop is more transparent */
 .modal-backdrop.show {
   opacity: 0.1;
 }
+
+/* animated scroll in from bottom */
+.animate-bottom {
+  max-width: 500px;
+  position: fixed;
+  bottom: 50px;
+  animation: animatebottom 0.5s ease-out;
+}
+
+@media (max-width: 575px) {
+  .animate-bottom {
+    max-width: 90%;
+    left: 5%;
+  }
+}
+
+@keyframes animatebottom {
+  from {
+    bottom: -300px;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 50px;
+    opacity: 1;
+  }
+}
+/* end animated scroll in from bottom */

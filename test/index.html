@@ -12,8 +12,11 @@
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
         crossorigin="anonymous">
-  <link rel="stylesheet" href="node_modules/bootsdark/dist/bootsdark.min.css">
-  <link rel="stylesheet" href="ios-modal.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/terrymorse58/bootsdark/dist/bootsdark.css"
+        crossorigin="anonymous">
+  <link rel="stylesheet"
+        href="../iosmodal.css">
 </head>
 <body>
 
@@ -33,66 +36,40 @@
   <p>A Bootstrap modal dialog that looks like an iOS modal.</p>
 
   <!-- show default style -->
-  <button type="button" class="btn btn-primary"
+  <button type="button" class="btn btn-primary" name="default"
           onclick="defaultStyle();">
     Open default style modal
   </button>
   <!-- show iOS style -->
-  <button type="button" class="btn btn-primary ml-3"
+  <button type="button" class="btn btn-primary ml-3" name="ios"
           onclick="iosStyle();">
     Open iOS style modal
   </button>
 </div>
 
-<!-- default Modal -->
-<div class="modal" id="defaultModal" tabindex="-1" role="dialog">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        In which direction would you like to go:<br/>
-        left, straight, or right?
-      </div>
-      <div class="modal-footer">
-        <div class="btn-group" role="group">
-          <button type="button"
-                  class="btn btn-lg btn-outline-primary"
-                  data-dismiss="modal">Left
-          </button>
-          <button type="button"
-                  class="btn btn-lg btn-outline-danger"
-                  data-dismiss="modal">Straight
-          </button>
-          <button type="button"
-                  class="btn btn-lg btn-outline-secondary"
-                  data-dismiss="modal">Right
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<pre id="result" class="m-4 p-2" style="border: 1px solid gray"></pre>
 
-<!-- iOS Modal -->
-<div class="modal" id="iosModal" tabindex="-1" role="dialog">
-  <div class="modal-dialog modal-dialog-ios" role="document">
+<!-- default Modal -->
+<div class="modal fade" id="defaultModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document" style="position: relative">
     <div class="modal-content">
-      <div class="modal-body">
+      <div class="modal-body" id="body-default">
         In which direction would you like to go:<br/>
         left, straight, or right?
       </div>
       <div class="modal-footer">
-        <div class="btn-group" role="group">
+        <div class="btn-group" role="group" id="buttons-default">
           <button type="button"
                   class="btn btn-lg btn-outline-primary"
-                  data-dismiss="modal">Left
+            onclick="alert('you clicked left');">Left
           </button>
           <button type="button"
                   class="btn btn-lg btn-outline-danger"
-                  data-dismiss="modal">Straight
+                  onclick="alert('you clicked straight');">Straight
           </button>
           <button type="button"
                   class="btn btn-lg btn-outline-secondary"
-                  data-dismiss="modal">Right
+                  onclick="alert('you clicked right');">Right
           </button>
         </div>
       </div>
@@ -111,6 +88,7 @@
   src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
   integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
   crossorigin="anonymous"></script>
+<script src="../iosmodal.js"></script>
 <script>
 
   function defaultStyle () {
@@ -118,8 +96,31 @@
   }
 
   function iosStyle () {
-    $('#iosModal').modal('show');
+    const mbody = document.getElementById('body-default').innerHTML;
+    const buttons = [
+      {
+        id: "left-button",
+        type: "button",
+        class: "btn btn-lg btn-outline-primary",
+        innerHTML: "Left",
+        onclick: () => alert('you clicked left')
+      },
+      {
+        type: "button",
+        class: "btn btn-lg btn-outline-danger",
+        innerHTML: "Straight",
+        onclick: () => alert('you clicked straight')
+      },
+      {
+        type: "button",
+        class: "btn btn-lg btn-outline-secondary",
+        innerHTML: "Right",
+        onclick: () => alert('you clicked right')
+      }
+    ];
+    iOSModal.show(mbody, buttons);
   }
+
 </script>
 
 </body>

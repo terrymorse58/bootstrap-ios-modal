@@ -1,8 +1,8 @@
 {
   "name": "bootstrap-ios-modal",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "a Bootstrap modal styled to matched an iOS dialog",
-  "main": "index.html",
+  "main": "test/index.html",
   "repository": {
     "type": "git",
     "url": "https://github.com/terrymorse58/bootstrap-ios-modal.git"

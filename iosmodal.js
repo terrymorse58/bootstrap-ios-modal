@@ -14,7 +14,7 @@
 
   <div class="modal" id="iosmodal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-dialog-ios" role="document">
-      <div class="modal-content animate-bottom">
+      <div class="modal-content animate-ios">
         <div class="modal-body" id="iosmodal-body">
           <!-- body content -->
         </div>
@@ -47,7 +47,7 @@ const iOSModal = (function () {
 
   const modalContent = Object.assign(
     document.createElement('div'), {
-      className: 'modal-content animate-bottom'
+      className: 'modal-content animate-ios'
     });
   modalDialog.appendChild(modalContent);
 
@@ -109,6 +109,34 @@ const iOSModal = (function () {
     $('#iosmodal').modal('hide');
   }
 
+  function customize (props) {
+    if (props.bottom) {
+      console.log('iOSModal setting bottom to:', props.bottom);
+      let style = document.getElementById('iosmodal-custom');
+      if (!style) {
+        style = document.createElement('style');
+        style.id = "iosmodal-custom";
+        document.head.appendChild(style);
+      }
+      style.innerHTML =
+        '@media (max-width: 575px) {\n' +
+        '  .animate-ios {\n' +
+        `    bottom: ${props.bottom};\n` +
+        '  }\n' +
+        '}\n' +
+        '@keyframes animatebottom {\n' +
+        '  from {\n' +
+        '    bottom: -300px;\n' +
+        '    opacity: 0;\n' +
+        '  }\n' +
+        '  to {\n' +
+        `    bottom: ${props.bottom};\n` +
+        '    opacity: 1;' +
+        '  }\n' +
+        '}';
+    }
+  }
+
   // upon window load, install modal template
   window.addEventListener('load', () => {
     // console.log('iOSModal window load event');
@@ -116,6 +144,7 @@ const iOSModal = (function () {
   });
 
   return {
+    customize,
     show,
     hide
   };

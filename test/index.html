@@ -33,25 +33,28 @@
 
   <h1>Bootstrap Modal with iOS Styling</h1>
 
-  <p>A Bootstrap modal dialog that looks like an iOS modal.</p>
+  <h5>A Bootstrap modal dialog that looks like an iOS modal.</h5>
+
+  <p class="mb-0">Responsive to: window size, dark/light modes,
+    touch devices.</p>
 
   <!-- show default style -->
-  <button type="button" class="btn btn-primary" name="default"
+  <button type="button" class="btn btn-primary mt-3 mr-3" name="default"
           onclick="defaultStyle();">
-    Open default style modal
+    Default styling
   </button>
   <!-- show iOS style -->
-  <button type="button" class="btn btn-primary ml-3" name="ios"
+  <button type="button" class="btn btn-primary mt-3" name="ios"
           onclick="iosStyle();">
-    Open iOS style modal
+    iOS styling
   </button>
 </div>
 
-<pre id="result" class="m-4 p-2" style="border: 1px solid gray"></pre>
+<hr>
 
 <!-- default Modal -->
 <div class="modal fade" id="defaultModal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document" style="position: relative">
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body" id="body-default">
         In which direction would you like to go:<br/>
@@ -77,6 +80,7 @@
   </div>
 </div>
 
+
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
@@ -88,6 +92,8 @@
   src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
   integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
   crossorigin="anonymous"></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/sticky-hover-fix@latest/sthoverfix.js"></script>
 <script src="../iosmodal.js"></script>
 <script>
 
@@ -119,7 +125,12 @@
       }
     ];
     iOSModal.show(mbody, buttons);
+    StHoverFix.addPressAnimation();
   }
+
+  iOSModal.customize({bottom: "50px"});
+
+  StHoverFix.fixIfTouchDevice();
 
 </script>
 

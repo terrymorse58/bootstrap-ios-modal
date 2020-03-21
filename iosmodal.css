@@ -45,7 +45,7 @@
 .modal-dialog-ios .modal-footer {
   justify-content: center;
   padding: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 .modal-dialog-ios .modal-footer .btn-group {
   width: 100%;
@@ -60,7 +60,7 @@
   border-bottom-left-radius: 12px;
 }
 .modal-dialog-ios .modal-footer .btn:not(:first-child) {
-  border-left: 1px solid rgba(0, 0, 0, 0.2);
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
 .modal-dialog-ios .modal-footer .btn:last-child {
   border-bottom-right-radius: 12px;
@@ -68,23 +68,65 @@
 .modal-dialog-ios .modal-footer .btn:hover {
   background-color: rgba(0, 0, 0, 0.15);
 }
-/* iOS modal backdrop is more transparent */
+
+/* switch to vertical stacked buttons on xs screens */
+@media (max-width: 575px) {
+  .modal-dialog-ios .modal-footer .btn-group {
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  .modal-dialog-ios .modal-footer .btn {
+    width: 100%;
+  }
+  .modal-dialog-ios .modal-footer .btn:first-child {
+    border-radius: 0;
+  }
+  .modal-dialog-ios .modal-footer .btn:not(:first-child) {
+    border-left: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .modal-dialog-ios .modal-footer .btn:last-child {
+    border-bottom-left-radius: 12px;
+  }
+  /* scroll in from bottom of screen */
+  .animate-ios {
+    max-width: 90%;
+    position: fixed;
+    bottom: 50px;
+    left: 5%;
+    animation: animatebottom 0.5s ease-out;
+  }
+  /* and reduce the body text size */
+  .modal-dialog-ios .modal-body {
+    font-weight: 300;
+    font-size: 1rem;
+  }
+}
+
+
+/* iOS modal backdrop is more transparent than default Bootstrap */
 .modal-backdrop.show {
   opacity: 0.1;
 }
 
-/* animated scroll in from bottom */
-.animate-bottom {
-  max-width: 500px;
-  position: fixed;
-  bottom: 50px;
-  animation: animatebottom 0.5s ease-out;
+/* fade in modal on small or larger screen */
+@media (min-width: 576px) {
+  .animate-ios {
+    max-width: 500px;
+    animation: animatefadein 0.5s ease-out;
+  }
 }
 
-@media (max-width: 575px) {
-  .animate-bottom {
-    max-width: 90%;
-    left: 5%;
+@keyframes animatefadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
@@ -99,4 +141,3 @@
     opacity: 1;
   }
 }
-/* end animated scroll in from bottom */

@@ -34,10 +34,12 @@ On all screens, the modal responds to light/dark mode preference.
 ## Example
 
 Large screen:
-![ios-modal dialog](https://terrymorse.com/public/iosmodal-ipad-dialog.png)
+
+![ios-modal dialog](https://terrymorse.com/public/iosmodal-ipad-dialog-420.png)
 
 Extra small screen:
-![ios-modal dialog](https://terrymorse.com/public/iosmodal-iphone-dialog.png)
+
+![ios-modal dialog](https://terrymorse.com/public/iosmodal-iphone-dialog-420.png)
 
 JavaScript:
 ```js

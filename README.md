@@ -2,7 +2,7 @@
 
 A Bootstrap modal styled to look like an iOS modal
 ---
-![ios modal example](https://terrymorse.com/public/iosmodal-iphone.gif)
+![ios modal example](docs/iosmodal-iphone.gif)
 
 **bootstrap-ios-modal** is a responsive Bootstrap modal that looks and
  acts like an iOS dialog.
@@ -35,11 +35,11 @@ On all screens, the modal responds to light/dark mode preference.
 
 Large screen:
 
-![ios-modal dialog](https://terrymorse.com/public/iosmodal-ipad-dialog-420.png)
+![ios-modal dialog](docs/iosmodal-ipad-dialog-420.png)
 
 Extra small screen:
 
-![ios-modal dialog](https://terrymorse.com/public/iosmodal-iphone-dialog-420.png)
+![ios-modal dialog](docs/iosmodal-iphone-dialog-420.png)
 
 JavaScript:
 ```js
@@ -118,5 +118,6 @@ Properties of `options`:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Default value is "50px" (matches iPhone).
 #### Return value ####
 None.
+
 
 

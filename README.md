@@ -19,17 +19,9 @@ On all screens, the modal responds to light/dark mode preference.
 
 ## Usage
 ```html
-<html>
-<head>
-  <link rel="stylesheet"
-   href="https://cdn.jsdelivr.net/gh/terrymorse58/bootstrap-ios-modal@latest/iosmodal.css">
-</head>
-<body>
-  <script
-    src="https://cdn.jsdelivr.net/gh/terrymorse58/bootstrap-ios-modal@latest/iosmodal.js">
-  </script>
-</body>
-</html>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap-ios-modal@latest/iosmodal.js">
+</script>
 ```
 ## Example
 

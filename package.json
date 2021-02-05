@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-ios-modal",
-  "version": "1.1.4",
+  "version": "1.2.1",
   "description": "a Bootstrap modal styled to matched a native iOS dialog",
   "main": "test/index.html",
   "repository": {

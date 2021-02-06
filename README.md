@@ -1,6 +1,6 @@
 # bootstrap-ios-modal
 
-A Bootstrap modal styled to look like an iOS modal
+A Bootstrap modal that mimics the look and feel of an iOS dialog
 ---
 ![ios modal example](docs/iosmodal-iphone-dark-cropped.gif)
 
@@ -17,21 +17,22 @@ On larger screens, the modal mimics an iPad:
 
 On all screens, the modal responds to light/dark mode preference.
 
+## Example
+
+Large screen, dark mode:
+
+![ios-modal dialog](docs/iosmodal-ipad-dark.gif)
+
+Extra small screen, dark mode:
+
+![ios-modal dialog](docs/iosmodal-iphone-dark-detail.gif)
+
 ## Usage
 ```html
 <script
   src="https://cdn.jsdelivr.net/npm/bootstrap-ios-modal@latest/iosmodal.js">
 </script>
 ```
-## Example
-
-Large screen:
-
-![ios-modal dialog](docs/iosmodal-ipad-dialog-420.png)
-
-Extra small screen:
-
-![ios-modal dialog](docs/iosmodal-iphone-dialog-420.png)
 
 JavaScript:
 ```js

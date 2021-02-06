@@ -2,7 +2,7 @@
 
 A Bootstrap modal styled to look like an iOS modal
 ---
-![ios modal example](docs/iosmodal-iphone.gif)
+![ios modal example](docs/iosmodal-iphone-dark-cropped.gif)
 
 **bootstrap-ios-modal** is a responsive Bootstrap modal that looks and
  acts like an iOS dialog.
